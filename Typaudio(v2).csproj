@@ -1,0 +1,2069 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Typaudio_v2_</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Iconv3.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.0.0" />
+    <PackageReference Include="NAudio.Core" Version="2.0.0" />
+    <PackageReference Include="Spectrogram" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LetterLibrary\letter-space.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_AMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_ASMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_BMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_CSMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_DSMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_EMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_FSMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O5_GSMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMajor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-A.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-B.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-C.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-D.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-E.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-F.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-G.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-H.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-I.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-J.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-K.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-L.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-M.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-N.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-O.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-P.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-Q.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-R.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-S.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-T.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-U.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-V.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-W.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-X.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-Y.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LetterLibrary\O6_AMinor_Standard_letter-Z.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\windows_command_prompt.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
