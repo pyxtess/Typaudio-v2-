@@ -108,19 +108,18 @@ namespace Typaudio_v2_
             
             if (File.Exists(Environment.CurrentDirectory + @"\preview.wav"))
                 File.Delete(Environment.CurrentDirectory + @"\preview.wav");
-            */
+
             if (textRef == "")
             {
                 MessageBox.Show("You trying to be funny?");
                 return;
             }
-            ///*
+
             AudioFileReader[] audioArray = compileTexttoSound().ToArray();
 
             var playlist = new ConcatenatingSampleProvider(audioArray);
 
 
-            /*
             (double[] audio, int sampleRate) = ReadWAV(Environment.CurrentDirectory + @"\preview.wav");
             var sg = new SpectrogramGenerator(sampleRate, fftSize: 4096, stepSize: 500, maxFreq: 3000);
             sg.Add(audio);
